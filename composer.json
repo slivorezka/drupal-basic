@@ -1,0 +1,99 @@
+{
+    "name": "slivorezka/drupal-basic",
+    "description": "Drupal Basic",
+    "type": "project",
+    "license": "MIT License",
+    "authors": [
+        {
+            "name": "slivorezka"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "require": {
+        "composer/installers": "^1.9",
+        "defuse/php-encryption": "^2.2",
+        "drupal/admin_toolbar": "^2.4",
+        "drupal/adminimal_admin_toolbar": "^1.11",
+        "drupal/adminimal_theme": "^1.6",
+        "drupal/core": "^9.0",
+        "drupal/core-composer-scaffold": "^9",
+        "drupal/core-project-message": "^9",
+        "drupal/core-recommended": "^9",
+        "drupal/core-vendor-hardening": "^9",
+        "drush/drush": "^10.3",
+        "vlucas/phpdotenv": "^5.2",
+        "zaporylie/composer-drupal-optimizations": "^1.2"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "platform": {
+            "php": "7.4"
+        }
+    },
+  "autoload": {
+    "files": ["load.environment.php"]
+  },
+    "extra": {
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "web/"
+            },
+            "file-mapping": {
+                "[web-root]/sites/default/default.services.yml": false,
+                "[web-root]/sites/default/default.settings.php": false,
+                "[web-root]/sites/default/settings.php.yml": false,
+                "[web-root]/sites/example.settings.local.php": false,
+                "[web-root]/sites/development.services.yml": false,
+                "[web-root]/sites/example.sites.php": false,
+                "[web-root]/sites/README.txt": false,
+                "[web-root]/modules/README.txt": false,
+                "[web-root]/modules/.gitignore": false,
+                "[web-root]/profiles/README.txt": false,
+                "[web-root]/themes/README.txt": false,
+                "[web-root]/.csslintrc": false,
+                "[web-root]/.eslintignore": false,
+                "[web-root]/.eslintrc.json": false,
+                "[web-root]/.htaccess": false,
+                "[web-root]/example.gitignore": false,
+                "[web-root]/.gitignore": false,
+                "[web-root]/robots.txt": false,
+                "[web-root]/INSTALL.txt": false,
+                "[web-root]/README.txt": false,
+                "[web-root]/web.config": false
+            }
+        },
+        "installer-paths": {
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "web/modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "web/themes/custom/{$name}": [
+                "type:drupal-custom-theme"
+            ]
+        }
+    }
+}
