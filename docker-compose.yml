@@ -23,8 +23,9 @@ services:
       DB_DRIVER: $DB_DRIVER
       PHP_FPM_USER: wodby
       PHP_FPM_GROUP: wodby
-      PHP_POST_MAX_SIZE: 1024M
-      PHP_MEMORY_LIMIT: 1024M
+      PHP_POST_MAX_SIZE: 1G
+      PHP_MEMORY_LIMIT: 1G
+      UPLOAD_LIMIT: 1G
       COLUMNS: 80
     volumes:
       - ./:/var/www/html
